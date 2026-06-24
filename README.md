@@ -1,4 +1,3 @@
-# AI-Voice-Assistant-
 # AI Voice Assistant
 
 1. 概要
