@@ -77,10 +77,20 @@ Whatの防御（audio_handlers.py）: faster-whisper 特有の、無音やノイ
 手順
 6.1 リポジトリのクローンとインストール
    ```bash
-      git clone https://github.com/sazirosa891t5k-jpg/AI-Voice-Assistant-
-      cd AI-Voice-Assistants-
+    git clone https://github.com/sazirosa891t5k-jpg/AI-Voice-Assistant-
+    cd AI-Voice-Assistants-
+    #OSによってインストールするものが変わるため注意してください。
+    #winOS
       pip install -r requirements.txt
-   
+
+    #MACOS
+      brew install portaudio
+      pip install -r requirements.txt
+
+    #LinuxOS
+      sudo apt install portaudio19-dev
+      pip install -r requirements.txt
+
      #.env.example をコピーして .env を作成し、必要なAPIキー（Gemini API)を設定してください。
       cp .env.example .env
      #.env ファイルをエディタで開き、APIキーを入力
