@@ -66,6 +66,10 @@ Whatの防御（audio_handlers.py）: faster-whisper 特有の、無音やノイ
   ワイヤレスイヤホン等の無線機器を接続して使用する場合、OS側のオーディオプロファイルの競合（HFP/A2DPの切り替え）やサンプリングレートの不一致により、音声入力（マイク）が正常に認識されない、あるいは動作が不安定になる可能性があります。確実に動作させるためには、有線マイク・有線スピーカー（またはPC内蔵デバイス）の使用を推奨します。
 * **動作環境の制限**
   本システムはマイク入力やオーディオI/Oを直接制御するため、ローカル環境（PC実機）でのスタンドアロン動作を前提としています。クラウド上のコンテナ環境（Docker等）やサーバー環境では、オーディオデバイスの認識エラーが発生するためそのままでは動作しません。
+* **Windows環境におけるC++ビルドエラーに関する注意**
+  pip install 実行時に Microsoft Visual C++ 14.0 or greater is required といったエラーが出る場合、C++のビルドツールが不足していますので、以下の対応をお願いします。
+**PyAudioでエラーが出る場合**: バイナリ経由でインストールするため、pip install pipwin を実行後、pipwin install pyaudio をお試しください。
+**その他のエラーの場合**: Microsoft C++ Build Toolsその他のエラーの場合: Microsoft C++ Build Tools をダウンロードし、「C++ によるデスクトップ開発」にチェックを入れてインストールした上で、再度 pip install を実行してください。
 
   ## 6. セットアップと環境構築
 前提条件
@@ -78,7 +82,7 @@ Whatの防御（audio_handlers.py）: faster-whisper 特有の、無音やノイ
 6.1 リポジトリのクローンとインストール
    ```bash
     git clone https://github.com/sazirosa891t5k-jpg/AI-Voice-Assistant-
-    cd AI-Voice-Assistants-
+    cd AI-Voice-Assistant-
     #OSによってインストールするものが変わるため注意してください。
     #winOS
       pip install -r requirements.txt
